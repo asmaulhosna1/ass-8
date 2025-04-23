@@ -1,13 +1,40 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import doctor1 from '../assets/C001-assets/doctor1.png';
+import doctor2 from '../assets/C001-assets/docto2.jpg';
+import doctor3 from '../assets/C001-assets/doctor3.jpg';
+import doctor4 from '../assets/C001-assets/doctor4.jpg';
+import doctor5 from '../assets/C001-assets/doctor5.png';
+import doctor6 from '../assets/C001-assets/doctor6.jpg';
+import doctor7 from '../assets/C001-assets/doctor7.jpg';
+import doctor8 from '../assets/C001-assets/doctor8.jpg';
+import doctor9 from '../assets/C001-assets/doctor9.jpg';
+import doctor10 from '../assets/C001-assets/doctor10.jpg';
+import doctor11 from '../assets/C001-assets/doctor11.jpg';
+import doctor12 from '../assets/C001-assets/doctor12.jpg';
+
+const doctorImages ={
+  1:doctor1,
+  2:doctor2,
+  3:doctor3,
+  4:doctor4,
+  5:doctor5,
+  6:doctor6,
+  7:doctor7,
+  8:doctor8,
+  9:doctor9,
+  10:doctor10,
+  11:doctor11,
+  12:doctor12,
+}
 
 const DoctorCard = ({ doctor }) => {
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
       <img 
-        src={doctor.image} 
+        src={doctorImages[doctor.id]} 
         alt={doctor.name} 
-        className="w-full h-48 object-cover"
+        className="w-full h-64 "
       />
       
       <div className="p-6">
