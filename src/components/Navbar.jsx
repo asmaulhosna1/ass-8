@@ -18,9 +18,9 @@ const Navbar = () => {
   });
 
   return (
-    <nav className="navbar bg-[#EFEFEF] w-11/12 mx-auto py-4 px-6 sticky top-0 z-50 mt-2">
+    <nav className="navbar bg-[#EFEFEF] w-full mx-auto py-4 px-6 sticky top-0 z-50 mt-2">
       <div className="container mx-auto flex justify-between items-center">
-        <div className=''>
+        <div className='pl-11'>
         <NavLink 
           to="/" 
           className="flex items-center space-x-2"
@@ -66,7 +66,7 @@ const Navbar = () => {
        </div>
           
           </div>
-          <div className=''>
+          <div className='pr-11'>
           <button className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark transition ml-4">
            Emergency
           </button>

@@ -7,6 +7,7 @@ import DoctorCard from '../components/DoctorCard';
 import SuccessCard from '../components/SuccessCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 // import { doctors } from '../data/doctors';
+import bannerImg from '../assets/C001-assets/banner-img-1.png'
 
 const Home = () => {
   const allDoctors =[
@@ -40,10 +41,10 @@ const Home = () => {
      id: 3,
       name: "Dr. Kabir Hossain",
       education: "MBBS, MD - Cardiology",
-      experience: "1+0 Years Experience",
+      experience: "10+ Years Experience",
       specialty: "Cardiology",
       regNo: "BD 12987564",
-      image: "/doctor3.jpg",
+      image: "../assets/C001-assets/doctor3.jpg",
       available: true,
       availability: ["Tuesday", "Thursday"],
       hospital: "United Hospital, Dhaka",
@@ -193,22 +194,26 @@ const Home = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 bg-[#EFEFEF]">
       {/* Banner Section */}
-      <section className="bg-gradient-to-r from-primary to-secondary rounded-xl p-8 mb-12 text-white text-center border-2 border-white shadow-lg">
-        <h1 className="text-4xl font-bold mb-4">Dependable Care, Backed by Trusted Professionals</h1>
+      <section className="w-11/12 mx-auto bg-gradient-to-b from-[#EFEFEF] to-white rounded-xl p-8 mb-12 text-center border border-white shadow-sm">
+        <div>
+        <h1 className="text-4xl font-bold mb-4">Dependable Care, Backed by Trusted <br /> Professionals</h1>
         <p className="text-xl mb-6">
-          Our platform connects you with verified, experienced doctors across various specialties – all at your convenience.
+        Our platform connects you with verified, experienced doctors across various specialties — all at your convenience. Whether it's a routine checkup or urgent consultation, book appointments in minutes and receive quality care you can trust.
         </p>
-        <div className="max-w-md mx-auto relative">
-          <input 
-            type="text" 
-            placeholder="Search any doctor..." 
-            className="w-full p-4 rounded-lg text-gray-800"
-          />
-          <button className="absolute right-2 top-2 bg-primary text-white px-4 py-2 rounded-md">
-            Search Now
-          </button>
+        <div className='mb-4 flex justify-center'>
+          <input className='bg-white rounded-full border-gray-200 p-2 border w-1/2' 
+           type="search" name="search" id="" placeholder='Search my doctor'/>
+           <button><a className='btn btn-primary text-white rounded-full' href="">Search Now</a></button>
+
+        </div>
+        </div>
+        <div className='flex justify-center gap-4'>
+          <img className='w-5/12' src={bannerImg} alt="" />
+          <img className='w-5/12' src={bannerImg} alt="" />
+         
+          
         </div>
       </section>
 
