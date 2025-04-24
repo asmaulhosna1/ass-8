@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { doctors } from '../data/doctors';
 import { useEffect } from 'react';
@@ -43,6 +43,7 @@ const DoctorDetails = () => {
   },[doctor,navigate]);
           
   const handleBookAppointment = () => {
+   
     const appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
     
     // Check for existing appointment
