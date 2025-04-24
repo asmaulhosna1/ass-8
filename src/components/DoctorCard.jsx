@@ -34,7 +34,7 @@ const DoctorCard = ({ doctor }) => {
       <img 
         src={doctorImages[doctor.id]} 
         alt={doctor.name} 
-        className="w-full h-64 p-6 rounded-4xl"
+        className="w-full p-6 rounded-4xl"
       />
       
       <div className="p-6">
@@ -53,7 +53,7 @@ const DoctorCard = ({ doctor }) => {
         
         <Link 
           to={`/doctors/${doctor.id}`}
-           className="border border-blue-500 w-full text-blue-800 text-md  px-20   
+           className="border border-blue-500 w-full text-blue-800 text-md px-2 lg:px-20   
             rounded-full mr-2 py-1 font-medium"> View Details </Link>
                            
       </div>

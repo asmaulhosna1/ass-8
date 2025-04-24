@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 const Bookings = () => {
   const [appointments, setAppointments] = useState([]);
   const navigate = useNavigate();
-
+  
   // Load appointments from localStorage
   useEffect(() => {
     const loadAppointments = () => {
@@ -41,17 +41,19 @@ const Bookings = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-6">My Appointments</h1>
+    <div className="container mx-auto ">
+      
 
       {appointments.length === 0 ? (
-        <div className="text-center bg-white p-8 rounded-lg shadow">
-          <p className="text-gray-500 mb-4">
+        <div className="text-center bg-[#EFEFEF]">
+          
+          <h1 className="lg:text-4xl text-2xl font-bold pt-7">
             You haven't booked any appointments yet.
-          </p>
+          </h1>
+          <p className="text-gray-500 mb-4 mt-5">Our platform connects you with verified, experienced doctors across various specialties — all at your convenience.</p>
           <button
             onClick={() => navigate('/')}
-            className="btn btn-primary"
+            className="btn btn-primary md:mb-20 mb:10 lg:mb-32"
           >
             Book an Appointment
           </button>
