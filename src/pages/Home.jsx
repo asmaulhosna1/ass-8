@@ -1,13 +1,13 @@
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import CountUp from 'react-countup';
+
 
 import DoctorCard from '../components/DoctorCard';
 import SuccessCard from '../components/SuccessCard';
 import LoadingSpinner from '../components/LoadingSpinner';
-// import { doctors } from '../data/doctors';
+
 import bannerImg from '../assets/C001-assets/banner-img-1.png'
+import Img1 from '../assets/C001-assets/success-doctor.png'
 
 const Home = () => {
   const allDoctors =[
@@ -176,13 +176,13 @@ const Home = () => {
 
   // Success metrics data
   const successData = [
-    { title: "Total Doctors", value: 199, icon: "👨‍⚕️" },
+    { title: "Total Doctors", value: 199, icon: '👨‍⚕️' },
     { title: "Total Reviews", value: 467, icon: "⭐" },
     { title: "Patients", value: 1900, icon: "👨‍👩‍👧‍👦" },
     { title: "Total Staff", value: 300, icon: "👩‍⚕️" }
   ];
 
-  
+   
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 800);
@@ -196,7 +196,7 @@ const Home = () => {
   return (
     <div className="container mx-auto px-4 py-8 bg-[#EFEFEF]">
       {/* Banner Section */}
-      <section className="w-11/12 mx-auto bg-gradient-to-b from-[#EFEFEF] to-white rounded-xl p-8 mb-12 text-center border border-white shadow-sm">
+      <section className="w-11/12 mx-auto bg-gradient-to-b from-[#EFEFEF] to-white rounded-xl p-8 mb-12 text-center border border-white ">
         <div>
         <h1 className="text-4xl font-bold mb-4">Dependable Care, Backed by Trusted <br /> Professionals</h1>
         <p className="text-xl mb-6">
@@ -218,9 +218,9 @@ const Home = () => {
       </section>
 
       {/* Doctors Section */}
-      <section className="mb-16">
+      <section className="mb-16 w-10/12 mx-auto">
         <h2 className="text-3xl font-bold text-center mb-4">Our Best Doctors</h2>
-        
+        <p className='text-center text-gray-800 mb-8'>Our platform connects you with verified, experienced doctors across various specialties — all at your convenience. Whether it's a routine checkup or urgent consultation, book appointments in minutes and receive quality care you can trust.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {doctorsToShow.map(doctor => (
             <DoctorCard key={doctor.id} doctor={doctor} />
@@ -232,24 +232,22 @@ const Home = () => {
             onClick={() => setShowAllDoctors(!showAllDoctors)}
             className="btn btn-primary px-6 py-3"
           >
-            {showAllDoctors ? 'Show Less' : `Show All (${allDoctors.length - 6} More)`}
+            {showAllDoctors ? 'Show Less' : `Show All `}
           </button>
         </div>
       </section>
 
       {/* Success Section */}
-      <section className="mb-16">
+      <section className="mb-16 w-10/12 mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12">We Provide Best Medical Services</h2>
-        
+        <p className='text-center text-gray-800 mb-8'>Our platform connects you with verified, experienced doctors across various specialties — all at your convenience. </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {successData.map((item, index) => (
             <SuccessCard key={index} item={item} />
           ))}
         </div>
       </section>
-
-     
-    </div>
+      </div>
   );
 };
 

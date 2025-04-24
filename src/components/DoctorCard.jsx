@@ -30,34 +30,32 @@ const doctorImages ={
 
 const DoctorCard = ({ doctor }) => {
   return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+    <div className="bg-white rounded-xl overflow-hidden hover:shadow-lg transition duration-300">
       <img 
         src={doctorImages[doctor.id]} 
         alt={doctor.name} 
-        className="w-full h-64 "
+        className="w-full h-64 p-6 rounded-4xl"
       />
       
       <div className="p-6">
-        <div className="flex items-center mb-2">
-          <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded mr-2">
+        <div className="flex space-x-4 mb-2">
+          <span className="border border-green-500 bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full mr-2">
             Available
           </span>
-          <span className="text-gray-500 text-sm">{doctor.experience} Experience</span>
+          <span className="border border-blue-500 bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full mr-2">{doctor.experience} Experience</span>
         </div>
         
         <h3 className="text-xl font-bold mb-1">{doctor.name}</h3>
-        <p className="text-gray-600 text-sm mb-2">{doctor.qualifications}</p>
+        <p className='text-gray-600'>{doctor.education}</p>
+        <p className='border border-gray-200 border-dashed mt-2 mb-2'></p>
+        
         <p className="text-gray-500 text-xs mb-4">Reg No: {doctor.regNo}</p>
         
         <Link 
           to={`/doctors/${doctor.id}`}
-          className="text-primary hover:text-primary-dark font-medium inline-flex items-center"
-        >
-          View Details
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </Link>
+           className="border border-blue-500 w-full text-blue-800 text-md  px-20   
+            rounded-full mr-2 py-1 font-medium"> View Details </Link>
+                           
       </div>
     </div>
   );

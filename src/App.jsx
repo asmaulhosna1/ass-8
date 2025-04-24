@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
+import Contact from './pages/Contact';
 import DoctorDetails from './pages/DoctorDetails';
 import NoDoctorFound from './pages/NoDoctorFound';
 import Bookings from './pages/Bookings';
@@ -33,9 +34,14 @@ function App() {
             </RouteTransition>
           } />
           
-          <Route path="/bookings" element={
+          <Route path="/my-bookings" element={
             <RouteTransition>
               <Bookings />
+            </RouteTransition>
+          } />
+          <Route path="/contact" element={
+            <RouteTransition>
+             <Contact></Contact>
             </RouteTransition>
           } />
           <Route path="/blogs" element={
@@ -43,7 +49,7 @@ function App() {
               <Blogs />
             </RouteTransition>
           } />
-          <Route path="*" element={<Navigate to="/no-doctor-found"/>} />
+          <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
       </main>
       <Footer />
