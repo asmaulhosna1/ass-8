@@ -89,7 +89,8 @@ const Bookings = () => {
                 <h3 className="text-lg font-bold">{appointment.doctorName}</h3>
                 
                 <div className='flex justify-between mb-2'>
-                <p className="text-gray-600">{appointment.education}</p>
+                <p className="text-gray-600">{appointment.specialty}</p>
+                
                 <p >
           <span className="font-medium">Appointment Fee:</span> {appointment.fee} Taka 
             + VAT

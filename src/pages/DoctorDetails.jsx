@@ -1,7 +1,8 @@
-import { useParams, useNavigate, Navigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { doctors } from '../data/doctors';
 import { useEffect } from 'react';
+import NoDoctorFound from './NoDoctorFound';
 import doctor1 from '../assets/C001-assets/doctor1.png';
 import doctor2 from '../assets/C001-assets/docto2.jpg';
 import doctor3 from '../assets/C001-assets/doctor3.jpg';
@@ -37,10 +38,14 @@ const DoctorDetails = () => {
   const doctor = doctors.find(d => d.id === parseInt(id));
 
   useEffect(()=>{
-    if (!doctor) {
+    if (!doctor || !isValidDoctorId(id)) {
       navigate('/no-doctor-found',{replace :true});
           }
-  },[doctor,navigate]);
+  },[doctor,id,navigate]);
+  
+  const isValidDoctorId=(id)=>{
+    return !isNaN(id) && doctors.some(d=>d.id===parseInt(id))
+  };
           
   const handleBookAppointment = () => {
    
@@ -56,7 +61,7 @@ const DoctorDetails = () => {
       id: Date.now(),
       doctorId: doctor.id,
       doctorName: doctor.name,
-      qualifications: doctor.qualifications,
+     
       specialty: doctor.specialty,
       fee: doctor.fee,
       date: new Date().toLocaleDateString(),
@@ -65,8 +70,10 @@ const DoctorDetails = () => {
 
     localStorage.setItem('appointments', JSON.stringify([...appointments, newAppointment]));
     toast.success(`Appointment booked with ${doctor.name}!`);
-    setTimeout(() => navigate('/my-bookings'), 1000);
+     navigate('/my-bookings');
+   
   };
+  if(!doctor) return <NoDoctorFound></NoDoctorFound>;
 
   return (
     <main className="flex-grow p-4 md:p-8 mx-auto w-full bg-[#EFEFEF]">

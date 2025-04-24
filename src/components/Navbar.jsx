@@ -67,7 +67,7 @@ const Navbar = () => {
           
           </div>
           <div className='pr-11'>
-          <button className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark transition ml-4">
+          <button className="cursor-pointer bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark transition ml-4">
            Emergency
           </button>
         </div>
@@ -149,7 +149,7 @@ const Navbar = () => {
             Contact
           </NavLink>
           <button className="w-full bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark transition mt-4">
-            Login
+            Emergency
           </button>
         </div>
       )}

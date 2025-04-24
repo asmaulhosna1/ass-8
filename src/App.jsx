@@ -28,7 +28,7 @@ function App() {
               <DoctorDetails />
             </RouteTransition>
           } />
-          <Route path="/no-doctor-found" element={
+          <Route path="/doctors/*" element={
             <RouteTransition>
              <NoDoctorFound></NoDoctorFound>
             </RouteTransition>

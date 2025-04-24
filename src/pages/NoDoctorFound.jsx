@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 
+
 import { useEffect } from 'react';
 
 const NoDoctorFound = () => {
@@ -17,7 +18,7 @@ const NoDoctorFound = () => {
       
       <Link 
         to="/" 
-        onClick={() => navigate('/', { replace: true })}
+        onClick={() => navigate('/doctors', { replace: true })}
         className="btn btn-primary"
       >
         View All Doctors
