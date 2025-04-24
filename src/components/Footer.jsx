@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import logoImg from '../assets/C001-assets/logo.png'
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8">
+    <footer className=" py-8">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center">
           <Link to="/" className="flex items-center space-x-2 mb-6">
-            <img src="/logo-white.png" alt="DooTalk Logo" className="h-10" />
+            <img src={logoImg} alt="DooTalk Logo" className="h-10" />
             <span className="text-xl font-bold">DooTalk</span>
           </Link>
           
@@ -31,9 +32,7 @@ const Footer = () => {
             </a>
           </div>
           
-          <div className="mt-6 text-sm text-gray-400">
-            © {new Date().getFullYear()} DooTalk. All rights reserved.
-          </div>
+          
         </div>
       </div>
     </footer>
