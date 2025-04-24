@@ -7,7 +7,7 @@ import SuccessCard from '../components/SuccessCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 import bannerImg from '../assets/C001-assets/banner-img-1.png'
-import Img1 from '../assets/C001-assets/success-doctor.png'
+
 
 const Home = () => {
   const allDoctors =[

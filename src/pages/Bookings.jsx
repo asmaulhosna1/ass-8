@@ -29,7 +29,8 @@ const Bookings = () => {
   const chartData = appointments.map(app => ({
     name: app.doctorName.split(' ')[1] || app.doctorName, // Use last name or full name
     fee: app.fee,
-    date: new Date(app.date).toLocaleDateString()
+    
+   education:app.education,
   }));
 
   // Cancel appointment function
@@ -41,7 +42,7 @@ const Bookings = () => {
   };
 
   return (
-    <div className="container mx-auto ">
+    <div className="container mx-auto bg-[#EFEFEF]">
       
 
       {appointments.length === 0 ? (
@@ -61,8 +62,8 @@ const Bookings = () => {
       ) : (
         <>
           {/* Appointments Chart */}
-          <div className="bg-white p-4 rounded-lg shadow-md mb-8">
-            <h2 className="text-lg font-semibold mb-4">Appointments Overview</h2>
+          <div className="bg-white w-11/12 mx-auto p-4 rounded-lg  mb-8">
+            
             <div className="h-64">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={chartData}>
@@ -76,22 +77,28 @@ const Bookings = () => {
               </ResponsiveContainer>
             </div>
           </div>
+          <div className='text-center'>
+            <h1 className=' font-bold text-xl lg:text-3xl'>My Today Appointment</h1>
+            <p className="text-gray-500 mb-4 mt-5">Our platform connects you with verified, experienced doctors across various specialties — all at your convenience.</p>
+          </div>
 
           {/* Appointments List */}
-          <div className="space-y-4">
+          <div className="space-y-4 w-11/12 mx-auto pb-8 ">
             {appointments.map(appointment => (
               <div key={appointment.id} className="bg-white p-4 rounded-lg shadow">
                 <h3 className="text-lg font-bold">{appointment.doctorName}</h3>
-                <p className="text-gray-600">{appointment.qualifications}</p>
-                <p className="my-2">
-                  <span className="font-medium">Fee:</span> {appointment.fee} Taka + VAT
+                
+                <div className='flex justify-between mb-2'>
+                <p className="text-gray-600">{appointment.education}</p>
+                <p >
+          <span className="font-medium">Appointment Fee:</span> {appointment.fee} Taka 
+            + VAT
                 </p>
-                <p className="text-sm text-gray-500">
-                  {appointment.date} at {appointment.time}
-                </p>
+                </div>
+                <p className='border border-gray-200 border-dashed mt-2 mb-2'></p>
                 <button
                   onClick={() => cancelAppointment(appointment.id)}
-                  className="btn btn-error btn-sm mt-3"
+                  className="border p-1 rounded-full text-red-500 border-red-700 w-full"
                 >
                   Cancel Appointment
                 </button>

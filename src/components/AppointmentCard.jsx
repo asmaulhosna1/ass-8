@@ -1,6 +1,6 @@
 const AppointmentCard = ({ appointment, onCancel }) => {
     return (
-      <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
+      <div className="bg-[#EFEFEF]  rounded-xl p-6 hover:shadow-lg transition">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center">
           <div className="mb-4 md:mb-0">
             <h3 className="text-xl font-bold text-gray-800">{appointment.doctorName}</h3>
