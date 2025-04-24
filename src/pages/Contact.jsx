@@ -7,17 +7,17 @@ const Contact = () => {
     navigate('/');
   };
     return (
-        <div>
-            <h1>404-Page Not Found</h1>
-            <p></p>
-            <div className="flex justify-between items-center pt-4">
+        <div className='w-full bg-[#EFEFEF] bg mx-auto pb-6 lg:pb-28 text-center'>
+            <h1 className='text-red-600 lg:text-4xl text-xl lg:pt-28 pt-10'>404-Page Not Found</h1>
+            <p className='mt-3 mb-3'>Oops! The page you're looking for doesn't exist</p>
+            
             <button 
               onClick={handleGoHome}
-              className="btn btn-ghost"
+              className="btn btn-primary"
             >
-              ← Go Home
+              ← Go Back Home
             </button>
-        </div>
+        
         </div>
     );
 };
